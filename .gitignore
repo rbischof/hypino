@@ -1,0 +1,19 @@
+# don't track lightning logs
+lightning_logs/
+
+# don't track python cache
+__pycache__/
+
+# don't track OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# don't track model weights
+models/
+
+# don't track training files
+runs/
