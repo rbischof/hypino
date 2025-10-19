@@ -431,6 +431,7 @@ class HyPINO(pl.LightningModule):
             max_epochs=self.epochs,
             callbacks=[progbar, checkpoint_callback, best_checkpoint_callback],
             accumulate_grad_batches=accumulate_grad_batches,
+            strategy=pl.strategies.DDPStrategy(find_unused_parameters=True),
             devices=devices,
         )
 

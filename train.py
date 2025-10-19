@@ -30,7 +30,9 @@ def main():
     if args.devices == '-1':
         devices = -1  # all GPUs
     elif args.devices.isdigit():
-        devices = int(args.devices)
+        devices = [int(args.devices)]
+    elif args.devices.startswith('[') and args.devices.endswith(']'):
+        devices = [int(x) for x in args.devices[1:-1].replace(',', ' ').split() if x.strip()]
     else:
         devices = args.devices
 
